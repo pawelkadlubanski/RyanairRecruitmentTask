@@ -15,7 +15,7 @@ import static com.jayway.restassured.RestAssured.given;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class FlightsServiceControllerTest {
-    public static final String FLIGHTS = "/flights";
+    public static final String FLIGHTS = "/scheduledFlights";
 
     @LocalServerPort
     private int port;

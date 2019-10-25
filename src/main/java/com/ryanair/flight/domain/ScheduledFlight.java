@@ -5,13 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Schedule {
-    private Integer month;
-    private List<ScheduleDays> days;
+public class ScheduledFlight {
+    private String number;
+    private String departureTime;
+    private String arrivalTime;
 }

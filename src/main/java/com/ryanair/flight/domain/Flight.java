@@ -5,12 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Flight {
-    private String number;
-    private String departureTime;
-    private String arrivalTime;
+    Integer stops;
+    List<Leg> legs;
 }

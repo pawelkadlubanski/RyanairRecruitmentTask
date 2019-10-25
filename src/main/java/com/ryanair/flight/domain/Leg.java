@@ -5,13 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FlightDays {
-    private String day;
-    private List<Flight> flights;
+public class Leg {
+    String departureAirport;
+    String arrivalAirport;
+    LocalDateTime departureDateTime;
+    LocalDateTime arrivalDateTime;
 }
