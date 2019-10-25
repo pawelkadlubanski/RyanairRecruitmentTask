@@ -17,7 +17,7 @@ class SchedulesApiClientTest {
 
     @Test
     public void shouldReturnDataFromExternalSource() {
-        Schedule schedule = client.getSchedule("DUB", "WRO", "2019", "3");
+        Schedule schedule = client.getSchedule("DUB", "WRO", 2019, 3);
         Assertions.assertThat(schedule).isNotNull();
         Assertions.assertThat(schedule.getDays().isEmpty()).isFalse();
     }

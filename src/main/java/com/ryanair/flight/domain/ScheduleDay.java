@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ScheduleDays {
+public class ScheduleDay {
     private Integer day;
-    private List<ScheduledFlight> scheduledFlights;
+    private List<ScheduledFlight> flights;
 }

@@ -14,12 +14,12 @@ import org.springframework.web.client.RestTemplate;
 @Component
 @RequiredArgsConstructor
 public class SchedulesApiClient {
-    private static final String URL_FORMAT = "%s/%s/%s/years/%s/month/%s";
+    private static final String URL_FORMAT = "%s/%s/%s/years/%d/month/%d";
 
     private final RestTemplate restTemplate;
     private final String baseUrl;
 
-    public Schedule getSchedule(String departure, String arrival, String year, String month) {
+    public Schedule getSchedule(String departure, String arrival, Integer year, Integer month) {
         String url = String.format(URL_FORMAT, baseUrl, departure, arrival, year, month);
         log.info("Request URL: {}", url);
         ResponseEntity<Schedule> entity = restTemplate.exchange(url, HttpMethod.GET, null, Schedule.class);

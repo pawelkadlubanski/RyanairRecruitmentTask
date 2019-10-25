@@ -13,5 +13,5 @@ import java.util.List;
 @AllArgsConstructor
 public class Schedule {
     private Integer month;
-    private List<ScheduleDays> days;
+    private List<ScheduleDay> days;
 }
