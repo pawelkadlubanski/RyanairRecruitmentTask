@@ -6,7 +6,6 @@ import com.ryanair.flight.domain.Leg;
 import com.ryanair.flight.domain.Schedule;
 import com.ryanair.flight.domain.ScheduleDay;
 import com.ryanair.flight.domain.ScheduledFlight;
-import com.ryanair.flight.provider.DirectFlightProvider;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
