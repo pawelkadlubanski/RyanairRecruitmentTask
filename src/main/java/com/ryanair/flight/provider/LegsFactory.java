@@ -1,4 +1,4 @@
-package com.ryanair.flight.service;
+package com.ryanair.flight.provider;
 
 import com.ryanair.flight.domain.Leg;
 import com.ryanair.flight.domain.Schedule;

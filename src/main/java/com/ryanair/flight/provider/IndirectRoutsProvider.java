@@ -1,4 +1,4 @@
-package com.ryanair.flight.service;
+package com.ryanair.flight.provider;
 
 import com.ryanair.flight.domain.IndirectRout;
 import com.ryanair.flight.domain.Rout;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class IndirectRoutsProvider {
 
-    public Optional<IndirectRout> matchSecondLeg(Rout firstLegRout, List<Rout> secondLegRoutsList) {
+    private Optional<IndirectRout> matchSecondLeg(Rout firstLegRout, List<Rout> secondLegRoutsList) {
         String firstLegArrival = firstLegRout.getAirportTo();
         return secondLegRoutsList.stream()
                 .filter(rout -> rout.getAirportFrom().equals(firstLegArrival))

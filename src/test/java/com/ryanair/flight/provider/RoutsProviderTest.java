@@ -1,7 +1,8 @@
-package com.ryanair.flight.service;
+package com.ryanair.flight.provider;
 
 import com.ryanair.flight.client.RoutsApiClient;
 import com.ryanair.flight.domain.Rout;
+import com.ryanair.flight.provider.RoutsProvider;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

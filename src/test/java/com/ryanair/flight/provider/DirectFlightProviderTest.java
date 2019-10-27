@@ -1,4 +1,4 @@
-package com.ryanair.flight.service;
+package com.ryanair.flight.provider;
 
 import com.ryanair.flight.client.SchedulesApiClient;
 import com.ryanair.flight.domain.Flight;
@@ -6,6 +6,7 @@ import com.ryanair.flight.domain.Leg;
 import com.ryanair.flight.domain.Schedule;
 import com.ryanair.flight.domain.ScheduleDay;
 import com.ryanair.flight.domain.ScheduledFlight;
+import com.ryanair.flight.provider.DirectFlightProvider;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +21,7 @@ import java.util.List;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class FlightServiceTest {
+class DirectFlightProviderTest {
     private static final String DEPARTURE = "DUB";
     private static final String ARRIVAL = "WROC";
     private static final int DAY_OF_MONTH_BEFORE_DEPARTURE = 1;
@@ -36,7 +37,7 @@ class FlightServiceTest {
     private SchedulesApiClient schedulesApiClient;
 
     @InjectMocks
-    private FlightService service;
+    private DirectFlightProvider provider;
 
     @Test
     public void shouldReturnCorrectListOfFlightsWhenAllFlightsInRange() {
@@ -70,7 +71,7 @@ class FlightServiceTest {
 
         Flight flight = Flight.builder().stops(0).legs(List.of(leg)).build();
 
-        List<Flight> flightList = service.getFlights(DEPARTURE, ARRIVAL, DEPARTURE_DATA_TIME, ARRIVAL_DATA_TIME);
+        List<Flight> flightList = provider.getFlights(DEPARTURE, ARRIVAL, DEPARTURE_DATA_TIME, ARRIVAL_DATA_TIME);
 
         Assertions.assertThat(flightList).containsOnly(flight);
     }
@@ -120,7 +121,7 @@ class FlightServiceTest {
 
         Flight flight = Flight.builder().stops(0).legs(List.of(leg)).build();
 
-        List<Flight> flightList = service.getFlights(DEPARTURE, ARRIVAL, DEPARTURE_DATA_TIME, ARRIVAL_DATA_TIME);
+        List<Flight> flightList = provider.getFlights(DEPARTURE, ARRIVAL, DEPARTURE_DATA_TIME, ARRIVAL_DATA_TIME);
 
         Assertions.assertThat(flightList).containsOnly(flight);
     }

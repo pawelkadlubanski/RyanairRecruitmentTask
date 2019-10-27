@@ -1,4 +1,4 @@
-package com.ryanair.flight.service;
+package com.ryanair.flight.provider;
 
 import com.ryanair.flight.client.SchedulesApiClient;
 import com.ryanair.flight.domain.Flight;
@@ -13,11 +13,12 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-public class FlightService {
+public class DirectFlightProvider implements FlightProvider{
     private static final int NUMBER_OF_STEPS_FOR_DIRECT_FLIGHT = 0;
 
     private final SchedulesApiClient schedulesApiClient;
 
+    @Override
     public List<Flight> getFlights(String departure, String arrival, LocalDateTime departureDataTime, LocalDateTime arrivalDataTime) {
         int year = departureDataTime.getYear();
         Schedule schedule = schedulesApiClient.getSchedule(departure, arrival, year, departureDataTime.getMonthValue());

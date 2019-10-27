@@ -1,4 +1,4 @@
-package com.ryanair.flight.service;
+package com.ryanair.flight.provider;
 
 import com.ryanair.flight.client.RoutsApiClient;
 import com.ryanair.flight.domain.Rout;
